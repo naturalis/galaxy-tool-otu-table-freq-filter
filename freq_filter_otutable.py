@@ -3,6 +3,16 @@ import pandas as pd
 import numpy as np
 from itertools import islice
 import numpy as np
+import argparse
+
+parser = argparse.ArgumentParser(description='')
+requiredArguments = parser.add_argument_group('required arguments')
+requiredArguments.add_argument('-i', metavar='input otutable', dest='input', type=str,required=True)
+requiredArguments.add_argument('-f', metavar='filter frequency', dest='frequency', type=str, required=True)
+requiredArguments.add_argument('-ot', metavar='output otutable', dest='output', type=str, required=True)
+requiredArguments.add_argument('-ol', metavar='output log', dest='log', type=str, required=True)
+args = parser.parse_args()
+
 
 def get_unique_otus(otutable):
     uniqueOtus = []
@@ -19,7 +29,7 @@ def filter_table(otutable, uniqueOtus):
     uniqueOtusInfo = []
     for name, values in otutable.iteritems():
         #print(name)
-        filterPercentage = values.sum()*0.05
+        filterPercentage = values.sum()*float(args.frequency)
         #newOtutable[name] = otutable[name].apply(filter_value, axis=1, name=name, filterPercentage=filterPercentage)
         for index, value in otutable[name].items():
             if index not in uniqueOtus:
@@ -34,13 +44,12 @@ def filter_table(otutable, uniqueOtus):
 
     return otutable, uniqueOtusInfo
 
-
 def main():
-    otutable = pd.read_csv('otu_table.tabular', sep="\t", header=0, index_col=0)
+    otutable = pd.read_csv(args.input, sep="\t", header=0, index_col=0)
     uniqueOtus = get_unique_otus(otutable)
     filtered_table, logDict = filter_table(otutable, uniqueOtus)
-    filtered_table.to_csv("filtered_table.txt", sep='\t')
-    with open("log.txt", "a") as log:
+    filtered_table.to_csv(args.output, sep='\t')
+    with open(args.log, "a") as log:
         for x in logDict:
             log.write(x)
 

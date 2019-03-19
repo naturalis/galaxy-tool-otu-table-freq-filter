@@ -1,0 +1,30 @@
+<tool id="freqfilter" name="Otu table frequency filter">
+<description>Filter per sample, keep unique otus</description>
+<command interpreter="bash">
+freq_filter_otutable.sh
+$input
+$frequency
+$output
+$log
+</command>
+
+<inputs>
+<param format="txt" name="input" type="data" label="Otu table"/>
+<param name="frequency" type="float" label="Minimum frequency (0.0005 = 0.05%)"  value="0.0005"/>
+</inputs>
+
+<outputs>
+	<data format="tabular" type="data" name="output" label="$input.display_name freq filtered" />
+	<data format="txt" type="data" name="log" label="$input.display_name freq filtered log" />
+</outputs>
+
+<tests>
+<test>
+<param name="test_input" value="test_input.txt"/>
+<output name="test_outout" file="test_output.txt"/>
+</test>
+</tests>
+<help>
+Frequency filter with unique otu exception
+</help>
+</tool>
