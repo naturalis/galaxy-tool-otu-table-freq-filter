@@ -17,12 +17,12 @@ args = parser.parse_args()
 def get_unique_otus(otutable):
     uniqueOtus = []
     for name, values in otutable.iterrows():
-        if 0 in values.unique() and len(values.unique()) == 2:
-            uniqueOtus.append(name)
+        counts = values.value_counts(sort=True)
+        counts = counts.sort_index()
+        if 0 in counts.index and len(counts) < 3:
+            if counts.iloc[1] == 1:
+                uniqueOtus.append(name)
     return uniqueOtus
-
-def filter_value(value, name, filterPercentage):
-    print(value)
 
 def filter_table(otutable, uniqueOtus):
     newOtutable = otutable
