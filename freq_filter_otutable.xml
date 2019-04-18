@@ -1,5 +1,7 @@
 <tool id="freqfilter" name="Otu table frequency filter">
+<!--
 <description>Filter per sample, keep unique otus</description>
+-->
 <command interpreter="bash">
 freq_filter_otutable.sh
 $input
@@ -25,6 +27,8 @@ $log
 </test>
 </tests>
 <help>
-Frequency filter with unique otu exception
+**Frequency filter with unique otu exception.** &#xD;
+Marten Hoogeveen, 2019. &#xD;
+http://github.com/naturalis/galaxy-tool-otu-table-freq-filter
 </help>
 </tool>
