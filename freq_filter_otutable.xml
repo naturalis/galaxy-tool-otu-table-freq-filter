@@ -27,8 +27,8 @@ $log
 </test>
 </tests>
 <help>
-**Frequency filter with unique otu exception.** &#xD;
-Marten Hoogeveen, 2019. &#xD;
+**Frequency filter with unique otu exception.** &#xA;
+Marten Hoogeveen, 2019. &#xA;
 http://github.com/naturalis/galaxy-tool-otu-table-freq-filter
 </help>
 </tool>
