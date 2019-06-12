@@ -2,12 +2,19 @@
 <!--
 <description>Filter per sample, keep unique otus</description>
 -->
-<command interpreter="bash">
-freq_filter_otutable.sh
+    <requirements>
+        <requirement type="package" version="3.6">python</requirement>
+	<requirement type="package">pandas</requirement>
+        <requirement type="package">numpy</requirement>
+    </requirements>
+<command>
+<![CDATA[
+bash '$__tool_directory__/freq_filter_otutable.sh'
 $input
 $frequency
 $output
 $log
+]]>
 </command>
 
 <inputs>
