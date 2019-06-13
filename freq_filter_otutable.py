@@ -35,6 +35,8 @@ def filter_table(otutable, uniqueOtus):
             if index not in uniqueOtus:
                 if value < filterPercentage:
                     otutable.at[index,name] = 0
+                    if str(value) != "0":
+                        uniqueOtusInfo.append(str(index)+" from sample "+str(name)+" is REMOVED with an abundance of "+str(value)+"\n")
             else:
                 if value > 0:
                     if value < filterPercentage:
