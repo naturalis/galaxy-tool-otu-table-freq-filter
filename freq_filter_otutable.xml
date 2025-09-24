@@ -1,4 +1,4 @@
-<tool id="freqfilter" name="Otu table frequency filter">
+<tool id="freqfilter" name="Otu table frequency filter" version="1.0">
 <!--
 <description>Filter per sample, keep unique otus</description>
 -->
