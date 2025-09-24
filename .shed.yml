@@ -1,0 +1,13 @@
+name: natrualis_otu_frequency_filter
+owner:  luka
+description: "Frequency filter for otu tables with unique otu exception." 
+long_description: |
+  "Frequency filter for otu tables with unique otu exception.".
+remote_repository_url: https://github.com/naturalis/galaxy-tool-otu-table-freq-filter.git
+homepage_url: https://github.com/naturalis/galaxy-tool-otu-table-freq-filter.git
+type: unrestricted
+categories:
+   - "Sequence Analysis"
+auto_tool_repositories:
+  name_template: natrualis_otu_frequency_filter
+  description_template: natrualis_otu_frequency_filter
