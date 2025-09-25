@@ -1,4 +1,4 @@
-name: natrualis_otu_frequency_filter
+name: naturalis_otu_frequency_filter
 owner:  luka
 description: "Frequency filter for otu tables with unique otu exception." 
 long_description: |
@@ -9,5 +9,5 @@ type: unrestricted
 categories:
    - "Sequence Analysis"
 auto_tool_repositories:
-  name_template: natrualis_otu_frequency_filter
-  description_template: natrualis_otu_frequency_filter
+  name_template: naturalis_otu_frequency_filter
+  description_template: naturalis_otu_frequency_filter
